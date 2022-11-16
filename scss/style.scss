@@ -1,0 +1,5 @@
+@use "functions" as *;
+
+body {
+  width: calculate(18, 26, "m");
+}

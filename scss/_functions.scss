@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "sass:meta";
+
+@function calculate($var1, $var2, $type) {
+  @if type-of($var1) == "number" and unitless($var1) {
+    @if type-of($var2) == "number" and unitless($var2) {
+      @if index("m" "dz" "o" "d", $type) {
+        @if $type == "d" {
+          $result: $var1 + $var2;
+          @return $result * 1px;
+        } @else if $type == "o" {
+          $result: $var1 - $var2;
+          @return $result * 1px;
+        } @else if $type == "m" {
+          $result: $var1 * $var2;
+          @return $result * 1px;
+        } @else if $type == "dz" {
+          $result: math.div($var1, $var2);
+          @return round($result) * 1px;
+        }
+      } @else {
+        @error "Błąd! Prawidłowe zastosowanie trzeciego argumentu($type) to: „d” dodawanie, „o” odejmowanie, „m” mnożenie, „dź” dzielenie.";
+      }
+    } @else {
+      @error "Błąd! Drugi argument($var2) jest niepoprawny! Argument musi być typu liczbowego i bez jednostki!";
+    }
+  } @else {
+    @error "Błąd! Pierwszy argument($var1) jest niepoprawny! Argument musi być typu liczbowego i bez jednostki!";
+  }
+}
