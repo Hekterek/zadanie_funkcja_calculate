@@ -22,4 +22,11 @@ odejmowana liczba z jednostka od tej bez jednostki.
 
 Nie wiem ktore zastosowanie jest lepsze ?
 
+Zauwazylem tez ze moglem to wszystko zrobic bez sass:meta i sass:math.
+Moze do niektorych funkcji nie musimy tego uzywac ?
+
+
 Dziekuje 
+
+
+Ciak Karol
